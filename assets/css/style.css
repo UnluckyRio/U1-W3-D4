@@ -1,0 +1,141 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: #0056b3;
+}
+
+#setup-container {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#setup-container label {
+  margin-right: 10px;
+  font-size: 1.1em;
+}
+
+#setup-container input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+#startGame {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#startGame:hover {
+  background-color: #218838;
+}
+
+#tabellone-principale {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  gap: 5px;
+  width: 90%;
+  max-width: 900px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cella-tabellone,
+.cella-cartella {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #eee;
+  font-size: 1.2em;
+  font-weight: bold;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+}
+
+.cella-tabellone.estratta {
+  background-color: #ffcc00;
+  color: white;
+}
+
+button#estraiNumero {
+  display: block;
+  margin: 20px auto;
+  padding: 15px 30px;
+  font-size: 1.5em;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button#estraiNumero:hover {
+  background-color: #0056b3;
+}
+
+button#estraiNumero:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Stili per le cartelle del giocatore */
+#cartelle-giocatore-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.cartella-giocatore {
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+
+.cartella-giocatore h3 {
+  text-align: center;
+  margin-top: 0;
+  color: #007bff;
+}
+
+.griglia-cartella {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+
+.cella-cartella.estratta {
+  background-color: #a0e6a0;
+  color: #333;
+  border-color: #28a745;
+}
