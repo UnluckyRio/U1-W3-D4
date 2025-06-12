@@ -63,6 +63,7 @@ h2 {
   padding: 10px;
   background-color: #fff;
   border-radius: 8px;
+
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -121,7 +122,6 @@ button#estraiNumero:disabled {
 }
 
 .cartella-giocatore {
-  border: 2px solid #333;
   border-radius: 8px;
   padding: 10px;
   background-color: #fff;
