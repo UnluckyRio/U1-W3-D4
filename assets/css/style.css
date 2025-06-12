@@ -1,14 +1,19 @@
 body {
   font-family: Arial, sans-serif;
   margin: 20px;
-  background-color: #f4f4f4;
+  background: #d60076;
+  background: linear-gradient(
+    200deg,
+    rgba(214, 0, 118, 1) 0%,
+    rgba(38, 0, 127, 1) 80%
+  );
   color: #333;
 }
 
 h1,
 h2 {
   text-align: center;
-  color: #0056b3;
+  color: #ffffff;
 }
 
 #setup-container {
@@ -82,11 +87,14 @@ h2 {
 }
 
 button#estraiNumero {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   margin: 20px auto;
   padding: 15px 30px;
   font-size: 1.5em;
-  background-color: #007bff;
+  background-color: rgb(106, 83, 255);
   color: white;
   border: none;
   border-radius: 8px;
@@ -95,7 +103,7 @@ button#estraiNumero {
 }
 
 button#estraiNumero:hover {
-  background-color: #0056b3;
+  background-color: rgb(73, 83, 255);
 }
 
 button#estraiNumero:disabled {
@@ -113,7 +121,7 @@ button#estraiNumero:disabled {
 }
 
 .cartella-giocatore {
-  border: 2px solid #007bff;
+  border: 2px solid #333;
   border-radius: 8px;
   padding: 10px;
   background-color: #fff;
@@ -125,7 +133,7 @@ button#estraiNumero:disabled {
 .cartella-giocatore h3 {
   text-align: center;
   margin-top: 0;
-  color: #007bff;
+  color: #333;
 }
 
 .griglia-cartella {

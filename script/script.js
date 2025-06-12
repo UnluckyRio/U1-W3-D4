@@ -12,12 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
     "cartelle-giocatore-container"
   );
 
-  const numeriEstratti = new Set(); // Per tenere traccia dei numeri già estratti
-  let cartelleGenerali = []; // Array per memorizzare tutte le cartelle generate
+  const numeriEstratti = new Set();
+  let cartelleGenerali = [];
 
   // 1. Funzione per creare il tabellone principale (1-76)
   function creaTabellonePrincipale() {
-    tabellonePrincipaleDiv.innerHTML = ""; // Pulisce se già presente
+    tabellonePrincipaleDiv.innerHTML = "";
     for (let i = 1; i <= 76; i++) {
       const cella = document.createElement("div");
       cella.classList.add("cella-tabellone");
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Funzione per generare una singola cartella del giocatore (24 numeri casuali unici)
+  // genera una singola cartella del giocatore
   function generaCartellaGiocatore(idCartella) {
     const cartellaNumeri = new Set();
     while (cartellaNumeri.size < 24) {
@@ -43,19 +43,18 @@ document.addEventListener("DOMContentLoaded", () => {
     Array.from(cartellaNumeri)
       .sort((a, b) => a - b)
       .forEach((numero) => {
-        // Ordina i numeri per una migliore visualizzazione
         const cella = document.createElement("div");
         cella.classList.add("cella-cartella");
-        cella.id = `cartella-${idCartella}-cella-${numero}`; // ID unico per ogni cella della cartella
+        cella.id = `cartella-${idCartella}-cella-${numero}`;
         cella.textContent = numero;
         grigliaCartellaDiv.appendChild(cella);
       });
 
     cartelleGiocatoreContainer.appendChild(cartellaDiv);
-    return Array.from(cartellaNumeri); // Restituisce i numeri della cartella
+    return Array.from(cartellaNumeri);
   }
 
-  // Gestione dell'inizio della partita
+  // inizio della partita
   startGameBtn.addEventListener("click", () => {
     const numCartelle = parseInt(numCartelleInput.value);
     if (isNaN(numCartelle) || numCartelle < 1 || numCartelle > 6) {
@@ -67,9 +66,9 @@ document.addEventListener("DOMContentLoaded", () => {
     setupContainer.style.display = "none";
     gameContainer.style.display = "block";
 
-    creaTabellonePrincipale(); // Crea il tabellone principale
-    cartelleGiocatoreContainer.innerHTML = ""; // Pulisci le cartelle precedenti
-    cartelleGenerali = []; // Resetta l'array delle cartelle
+    creaTabellonePrincipale();
+    cartelleGiocatoreContainer.innerHTML = "";
+    cartelleGenerali = [];
 
     // Genera le cartelle del giocatore
     for (let i = 1; i <= numCartelle; i++) {
@@ -89,9 +88,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let numeroCasuale;
     do {
       numeroCasuale = Math.floor(Math.random() * 76) + 1;
-    } while (numeriEstratti.has(numeroCasuale)); // Assicura che non sia un numero già estratto
+    } while (numeriEstratti.has(numeroCasuale));
 
-    numeriEstratti.add(numeroCasuale); // Aggiungi il numero estratto al Set
+    numeriEstratti.add(numeroCasuale);
 
     console.log(`Numero estratto: ${numeroCasuale}`);
 
