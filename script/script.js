@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Gestore dell'estrazione di un numero
+  // estrazione di un numero
   estraiNumeroBtn.addEventListener("click", () => {
     if (numeriEstratti.size >= 76) {
       alert("Tutti i numeri sono stati estratti! La partita è finita.");
